@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>La Magie de Tivoli</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url("tivoli.jpg") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 16px;
+      width: 80%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      background-color: #05A1AE;
+      color: white;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold; 
+      color: rgba(242, 141, 77, 1)
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Entrez le nom de votre équipe</h1>
+    <input type="text" id="keyInput" placeholder="Exemple: e1" />
+    <button onclick="goToTeam()">Valider</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function goToTeam() {
+      const teamName = document.getElementById("keyInput").value.trim().toLowerCase();
+      const allowedTeams = ["e1", "e2", "e3", "e4"]; 
+
+      if (allowedTeams.includes(teamName)) {
+        window.location.href = `${teamName}.html`;
+      } else {
+        document.getElementById("result").innerText = "Nom d'équipe inconnu. Veuillez réessayer.";
+      }
+    }
+  </script>
+
+</body>
+</html>

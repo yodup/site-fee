@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Equipe 4</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: url("tivoli.jpg") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .box {
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
+      margin: 15px;
+      max-width: 500px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      width: 80%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      background-color: #05A1AE;
+      color: white;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    details {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 15px 25px;
+      max-width: 500px;
+      width: 100%;
+      text-align: left;
+    }
+
+    summary {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #05A1AE;
+      cursor: pointer;
+    }
+
+    summary::-webkit-details-marker {
+      color: #05A1AE;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Encodez "musical" pour découvrir la magie de Tivoli</h1>
+    <input type="text" id="keyInput" placeholder="Entrez la clé">
+    <button onclick="checkKey()">Valider</button>
+    <p id="result"></p>
+  </div>
+
+  <details>
+    <summary>Script</summary>
+    <p> <img src="script.PNG" alt="script encodage" style="width: 500px; vertical-align: middle;"></p>
+  </details>
+
+  <script>
+    function checkKey() {
+      const input = document.getElementById('keyInput').value;
+      const result = document.getElementById('result');
+      if (input === 'kxuladj') {
+        result.textContent = ' 55°40′25.2″ N, 12°34′2.7″ E !';
+        result.style.color = 'rgba(5,161,174,1)';
+      } else {
+        result.textContent = "Oupss, je pense que tu t'es trompé !";
+        result.style.color = "rgba(242, 141, 77, 1)";
+      }
+    }
+  </script>
+</body>
+</html>
